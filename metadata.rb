@@ -18,3 +18,5 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/solr-docker'
+depends 'java', '~> 1.50.0'
+depends 'solr', '~> 0.6.0'
