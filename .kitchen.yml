@@ -17,7 +17,7 @@ platforms:
       pid_one_command: /usr/lib/systemd/systemd
       intermediate_instructions:
         - RUN yum -y install lsof which systemd-sysv initscripts net-tools
-
+      forward: 8983:8983
 verifier:
   name: inspec
 
