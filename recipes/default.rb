@@ -33,12 +33,21 @@ include_recipe 'java'
 # Setup attributes for 'solr' cookbook
 pp node.debug_value('solr', 'install_java')
 
-node.default['solr']['version'] = '4.10.3'
-node.default['solr']['url'] = 'https://archive.apache.org/dist/lucene/solr/4.10.3/solr-4.10.3.tgz'
+node.default['solr']['version'] = '6.6.0'
+#node.default['solr']['url'] = 'https://archive.apache.org/dist/lucene/solr/4.10.3/solr-4.10.3.tgz'
+# Solr 6.6.0
+node.default['solr']['url'] = 'https://archive.apache.org/dist/lucene/solr/6.6.0/solr-6.6.0.tgz'
+# Use a local copy of the file for speed
+#node.default['solr']['url'] = 'file:///Users/nwhite/Downloads/solr-6.6.0.tgz'
 
-# Get SHA256 checksum for tarball on MacOS: shasum -a 256 <file>
-node.default['solr']['checksum'] = 'ac7024a0a759c6c53cc3a66b3a84757d599d350f491eb221160613356532e2b6'
-node.default['solr']['data_dir'] = '/opt/solr-4.10.3/example/solr'
+# 4.10.3 - Get SHA256 checksum for tarball on MacOS: shasum -a 256 <file>
+#node.default['solr']['checksum'] = 'ac7024a0a759c6c53cc3a66b3a84757d599d350f491eb221160613356532e2b6'
+#node.default['solr']['data_dir'] = '/opt/solr-4.10.3/example/solr'
+
+# 6.6.0 - Get SHA256 checksum for tarball on MacOS: shasum -a 256 <file>
+node.default['solr']['checksum'] = '6b1d1ed0b74aef320633b40a38a790477e00d75b56b9cdc578533235315ffa1e'
+node.default['solr']['data_dir'] = '/opt/solr-6.6.0/example/solr'
+
 node.default['solr']['install_java'] = false
 
 # Run the 'solr' cookbook
